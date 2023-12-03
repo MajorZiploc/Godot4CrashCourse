@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmnehhf03kacp"]
+
+[ext_resource type="Texture2D" uid="uid://cwnihx3tovtf6" path="res://Art/Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Spritesheet.png" id="1_gd6e4"]
+
+[node name="PlayerCat" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_gd6e4")
+hframes = 4
+vframes = 4
