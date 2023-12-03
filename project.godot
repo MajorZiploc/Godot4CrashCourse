@@ -16,10 +16,9 @@ config/icon="res://icon.svg"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot_vim/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot-vim/plugin.cfg")
 
 [rendering]
 
-; for pixel art to not look blurry
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
