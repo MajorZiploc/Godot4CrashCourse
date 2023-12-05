@@ -97,6 +97,8 @@ var the_key_map : Array[Dictionary] = [
 	{ "keys": ["S"],                            "type": OPERATOR_MOTION, "operator": "delete_and_enter_insert_mode", "motion": "move_by_characters", "motion_args": { "forward": true, "one_line": true }, "action_args": { "insert_at": "inplace" }, "context": Context.NORMAL },
 	{ "keys": ["X"],                            "type": OPERATOR, "operator": "delete", "context": Context.VISUAL },
 	{ "keys": ["Shift+X"],                      "type": OPERATOR_MOTION, "operator": "delete", "motion": "move_by_characters", "motion_args": { "forward": false } },
+	{ "keys": ["G", "U"],                            "type": OPERATOR, "operator": "change_case", "operator_args": { "lower": true }, "context": Context.VISUAL },
+	{ "keys": ["G", "Shift+U"],                      "type": OPERATOR, "operator": "change_case", "operator_args": { "lower": false }, "context": Context.VISUAL },
 	{ "keys": ["U"],                            "type": OPERATOR, "operator": "change_case", "operator_args": { "lower": true }, "context": Context.VISUAL },
 	{ "keys": ["Shift+U"],                      "type": OPERATOR, "operator": "change_case", "operator_args": { "lower": false }, "context": Context.VISUAL },
 	{ "keys": ["Shift+QuoteLeft"],              "type": OPERATOR, "operator": "toggle_case", "operator_args": {}, "context": Context.VISUAL },
