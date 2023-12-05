@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bdf7qmifj6obk"]
+[gd_scene load_steps=16 format=3 uid="uid://bdf7qmifj6obk"]
 
 [ext_resource type="PackedScene" uid="uid://cmnehhf03kacp" path="res://Levels/Characters/player_cat.tscn" id="1_edl26"]
 [ext_resource type="Texture2D" uid="uid://110eba13osom" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="2_lqvjs"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bmswiv2jx7sbg" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Water.png" id="5_16hrw"]
 [ext_resource type="Texture2D" uid="uid://ckk6jwm8dggh2" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Wooden House.png" id="6_nflkt"]
 [ext_resource type="Texture2D" uid="uid://c7prkt5t8xmeu" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Fences.png" id="7_dfj7w"]
+[ext_resource type="PackedScene" uid="uid://dlj0hniggb8dk" path="res://Levels/Characters/mob_cow.tscn" id="8_mxh75"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vf5am"]
 texture = ExtResource("2_lqvjs")
@@ -701,6 +702,7 @@ sources/4 = SubResource("TileSetAtlasSource_nlml1")
 sources/5 = SubResource("TileSetAtlasSource_3mjhp")
 
 [node name="GameLevel" type="Node2D"]
+y_sort_enabled = true
 
 [node name="PlayerCat" parent="." instance=ExtResource("1_edl26")]
 position = Vector2(104, 58)
@@ -722,3 +724,6 @@ metadata/_edit_lock_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(104, 58)
+
+[node name="MobCow" parent="." instance=ExtResource("8_mxh75")]
+position = Vector2(286, 68)
