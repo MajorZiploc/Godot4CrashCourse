@@ -15,6 +15,11 @@ run/main_scene="res://Levels/game_level.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+ReplaceColor="*res://Levels/Utils/replace_color.gd"
+ColorPalette="*res://Levels/Utils/color_palette.gd"
+
 [display]
 
 window/size/viewport_width=1920
