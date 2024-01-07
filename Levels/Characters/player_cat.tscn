@@ -1,7 +1,11 @@
-[gd_scene load_steps=28 format=3 uid="uid://cmnehhf03kacp"]
+[gd_scene load_steps=30 format=3 uid="uid://cmnehhf03kacp"]
 
 [ext_resource type="Script" path="res://Levels/Characters/player_cat.gd" id="1_bvqh6"]
 [ext_resource type="Texture2D" uid="uid://cwnihx3tovtf6" path="res://Art/Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Spritesheet.png" id="1_gd6e4"]
+[ext_resource type="Shader" path="res://Levels/Characters/player_cat.gdshader" id="2_3e04q"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oo5kv"]
+shader = ExtResource("2_3e04q")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jq6qc"]
 size = Vector2(10, 8)
@@ -238,6 +242,7 @@ transitions = ["Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_
 script = ExtResource("1_bvqh6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_oo5kv")
 texture = ExtResource("1_gd6e4")
 hframes = 4
 vframes = 4
