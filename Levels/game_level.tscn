@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bdf7qmifj6obk"]
+[gd_scene load_steps=22 format=3 uid="uid://bdf7qmifj6obk"]
 
 [ext_resource type="PackedScene" uid="uid://cmnehhf03kacp" path="res://Levels/Characters/player_cat.tscn" id="1_edl26"]
 [ext_resource type="Texture2D" uid="uid://110eba13osom" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="2_lqvjs"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dlj0hniggb8dk" path="res://Levels/Characters/mob_cow.tscn" id="8_mxh75"]
 [ext_resource type="PackedScene" uid="uid://dduox185t3esw" path="res://Objects/chest.tscn" id="9_t8y83"]
 [ext_resource type="PackedScene" uid="uid://ym01n21xwv38" path="res://Objects/bed.tscn" id="10_ae5mr"]
+[ext_resource type="Shader" path="res://Levels/fog.gdshader" id="11_gwwlh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vf5am"]
 texture = ExtResource("2_lqvjs")
@@ -713,6 +714,18 @@ sources/3 = SubResource("TileSetAtlasSource_nc3pm")
 sources/4 = SubResource("TileSetAtlasSource_nlml1")
 sources/5 = SubResource("TileSetAtlasSource_3mjhp")
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ydd2r"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_16nev"]
+seamless = true
+noise = SubResource("FastNoiseLite_ydd2r")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vnnmb"]
+shader = ExtResource("11_gwwlh")
+shader_parameter/density = 0.25
+shader_parameter/speed = Vector2(0.02, 0.01)
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_16nev")
+
 [node name="GameLevel" type="Node2D"]
 y_sort_enabled = true
 
@@ -751,3 +764,15 @@ position = Vector2(300, 61)
 
 [node name="bed" parent="." instance=ExtResource("10_ae5mr")]
 position = Vector2(76, 129)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = 1
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1920, 1080)
+
+[node name="Fog_ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxLayer"]
+material = SubResource("ShaderMaterial_vnnmb")
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 1920.0
+offset_bottom = 1080.0
