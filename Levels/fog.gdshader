@@ -7,6 +7,7 @@ uniform sampler2D noise_texture: repeat_enable, filter_nearest;
 uniform float density: hint_range(0.0, 1.0) = 0.25;
 // Fog speed
 uniform vec2 speed = vec2(0.02, 0.01);
+uniform vec4 fog_color: source_color = vec4(0.0, 0.0, 0.0, 1.0);
 
 
 // Called for every pixel the material is visible on
@@ -20,4 +21,5 @@ void fragment() {
 	float fog = clamp(noise * 2.0 - 1.0, 0.0, 1.0);
 	// Apply the fog effect
 	COLOR.a *= fog * density;
+  COLOR.rgb = fog_color.rgb;
 }
