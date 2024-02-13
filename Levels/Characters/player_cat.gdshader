@@ -7,10 +7,10 @@ void vertex() {
 void fragment() {
   // Called for every pixel the material is visible on.
   // reverse color values
-  // COLOR.rgb = COLOR.bgr;
-  // float gray = (COLOR.r + COLOR.g + COLOR.b) / 3.0;
+  COLOR.rgb = COLOR.bgr;
+  float gray = (COLOR.r + COLOR.g + COLOR.b) / 3.0;
   // gray scale
-  // COLOR = vec4(gray, gray, gray, COLOR.a);
+  COLOR = vec4(gray, gray, gray, COLOR.a);
 }
 
 void light() {

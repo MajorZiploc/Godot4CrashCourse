@@ -1,7 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://bdf7qmifj6obk"]
+[gd_scene load_steps=24 format=3 uid="uid://bdf7qmifj6obk"]
 
 [ext_resource type="PackedScene" uid="uid://cmnehhf03kacp" path="res://Levels/Characters/player_cat.tscn" id="1_edl26"]
 [ext_resource type="Texture2D" uid="uid://110eba13osom" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="2_lqvjs"]
+[ext_resource type="Shader" path="res://Levels/Characters/player_cat.gdshader" id="2_yjncr"]
 [ext_resource type="Texture2D" uid="uid://cjxxi8xy3auv5" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Hills.png" id="3_o3chd"]
 [ext_resource type="Texture2D" uid="uid://bvdw2bh6awc34" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Tilled Dirt.png" id="4_urxvr"]
 [ext_resource type="Texture2D" uid="uid://bmswiv2jx7sbg" path="res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Water.png" id="5_16hrw"]
@@ -11,6 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://dduox185t3esw" path="res://Objects/chest.tscn" id="9_t8y83"]
 [ext_resource type="PackedScene" uid="uid://ym01n21xwv38" path="res://Objects/bed.tscn" id="10_ae5mr"]
 [ext_resource type="Shader" path="res://Levels/fog.gdshader" id="11_gwwlh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4miwc"]
+shader = ExtResource("2_yjncr")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vf5am"]
 texture = ExtResource("2_lqvjs")
@@ -731,6 +735,7 @@ shader_parameter/noise_texture = SubResource("NoiseTexture2D_16nev")
 y_sort_enabled = true
 
 [node name="PlayerCat" parent="." instance=ExtResource("1_edl26")]
+material = SubResource("ShaderMaterial_4miwc")
 position = Vector2(104, 58)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PlayerCat"]
