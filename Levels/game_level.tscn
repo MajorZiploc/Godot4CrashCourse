@@ -770,7 +770,6 @@ position = Vector2(76, 129)
 layer = 1
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2(1920, 1080)
 
 [node name="Fog_ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxLayer"]
 material = SubResource("ShaderMaterial_vnnmb")
