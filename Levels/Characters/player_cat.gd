@@ -7,6 +7,7 @@ extends CharacterBody2D
 @export var target_color = Color(ColorPalette.get_color(1));
 
 @onready var state_machine = $AnimationTree.get("parameters/playback");
+@onready var bg_egg = $bg_egg;
 
 func _ready():
   update_animation_parameters(starting_direction);
@@ -32,5 +33,7 @@ func update_animation_parameters(move_input: Vector2):
 func pick_new_state():
   if (velocity != Vector2.ZERO):
     state_machine.travel("Walk");
+    bg_egg.visible = false;
   else:
     state_machine.travel("Idle");
+    bg_egg.visible = true;
