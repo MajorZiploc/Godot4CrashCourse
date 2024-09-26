@@ -18,3 +18,5 @@ mono_crash.*.json
 tags
 
 Session.vim
+
+cscope.out
